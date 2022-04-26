@@ -1,0 +1,7 @@
+CPPFLAGS	= -Wall -O3 -D_REENTRANT
+
+.cc.o	:	gcc -c $(CPPFLAGS) $<
+
+all	:	main.o switchserver.o tcp.o displayupdate.o server.o bookmark.o opensitedialog.o displayhandler.o keyhandler.o
+		gcc -o pftp main.o switchserver.o tcp.o displayupdate.o server.o bookmark.o opensitedialog.o displayhandler.o keyhandler.o -lncurses -lpthread -static
+

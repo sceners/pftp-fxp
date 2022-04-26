@@ -1,0 +1,17 @@
+MAKE= make
+all	:	src/Makefile
+		cd src;$(MAKE);cd ..
+
+dynamic	:	src/Makefile
+		cd src;$(MAKE) dynamic;cd ..
+
+static	:	src/Makefile
+		cd src;$(MAKE) static;cd ..
+
+clean	:	pftp	
+		cd src;$(MAKE) clean;cd ..
+
+pkg     :	
+		rm -f Makefile;cd src;$(MAKE) clean; rm -f Makefile; cd ..; cd .. && tar -czf pftpfxp.tgz pftpfxp --exclude .pftpbookmrks --exclude .pftpbookmrks.bak
+
+

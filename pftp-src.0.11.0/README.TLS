@@ -1,0 +1,36 @@
+read the glftpd-TLS docs, get it from http://pftp.suxx.sk
+
+This product includes cryptographic software written by Eric Young
+(eay@cryptsoft.com)
+
+
+
+this document will be done in next version (or later :))
+for now its only a todo place for me
+
+
+
+todo >
+- pridat post to display na refresh switchu
+- q nech sa pyta na confirm
+- if there are more sessions open for one site and user changes prefs, update all
+- timeout on some reply causes problems
+- check problems in G6 ftpd... and try if ssl works in wsftpd
+- stop transfer in case of any error, make user to be able to stop
+  transfer
+- make local filesystem make directories like ftp
+- add queue flush ability for servers (maybe queue editor too)
+  (ability to abort a transfer too)
+- change .ok. behaviour 
+- weird PORT/PASV reply when making dir in some very loooong path
+- random tahanie, poradie
+- flush spravit spravne
+-
+
+
+TODO :
+new bookmark format with ability to configure if to use TLS for the
+server, if bail out if tls didnt work, if use TLS listing...
+and reserver some place in it for the future
+
+add cipher settings (for each server ?)

@@ -1,0 +1,105 @@
+--FINAL-RELEASE-- pftp II@0.7.2@x (c) pSi --FINAL-RELEASE--
+
+II@0.7.2@0 TSUNAMi EDiTiON:
+---------------------------
+- fixed a damn bug in FXP mode. if some file couldn't be upped or retrieved,
+  pftp screwed up your whole upload. I knew I should have never put FXP
+  in pftp, but oh well...
+  thankx to MR_Y for telling me about it :)
+
+II@0.7.1@0 TSUNAMi EDiTiON:
+---------------------------
+- sped up vital parts of pftp. while you had max. speeds of around 300kb/s
+  in older versions of pftp, you now get up to 3mb/s. everything else
+  dealing with TCP has a nice speed up too, eg. the process of logging in
+  (thanks to zenke/EPT for pointing that out to me)
+- pftp is, by the way, Y2K compliant :P
+
+II@0.7.0@0:
+-----------
+- added FXP mode (files only, no whole dirs... who needs that anyways)
+  (read README how to get into FXP mode)
+
+II@0.6.2@0:
+-----------
+- removed timelock for all you lamerz out there
+
+II@0.6.1@1:
+-----------
+- fixed segfault with some rftpd versions which reported no user + group
+
+II@0.6.0@1:
+-----------
+- was a long time now, we finally got a FINAL version
+- fixed MANY bugs, improved compatibility to many commond daemons,
+  e.g. the 'hang' with some soft-links, some unpredictable segfaults
+  and so on
+- dont use this tool on sites which already banned it explicitely.
+
+
+II@0.5.6@4:
+-----------
+- fixed a bug with stealth-mode and very large directory contents
+  (stealth mode told you that a 'critical error' happened)
+
+II@0.5.6@3:
+-----------
+- stealth mode added, tries to hide you from script hunters
+  (read the .pftconf for more info)
+
+
+II@0.5.5@1:
+-----------
+- fixed stalling bugs
+- fixed bugs which occured sometimes after a timeout on data connection,
+  where pftp was unable to re-gain control of the site
+
+
+II@0.5.4@2:
+-----------
+- fixed minor bugs
+- stalling bug seems to be fixed
+- added undo-last-prepare function
+- added RNDREFR
+- fixed core dump on some dir-names, weirdo bug
+
+
+II@0.5.3@1:
+-----------
+- fixed countless bugs
+- util/game switch is now chained too if in FTP+ mode
+- you must specify a separate dir for the .okay and .error files now (configfile)
+
+
+II@0.5.0@1:
+-----------
+- fixed memory leak
+- fixed speeding information when in log or somewhere else
+- fixed support for gftpd (does not report any unix-group in filelist)
+- changed behaviour in chained-mode: it caches what you do (be aware!),
+  so you can start action while site is busy
+- when you leech a file which you already leeched before, it's associated
+  .okay (or .error) file will be wiped first [screwed uploads]
+- changed command to obtain a filelist from a remote server, it now shows
+  hidden files too
+- speeding information is now updated if it diffs 10% to the snapshot
+  before, or within 2 seconds
+- remove auto-jump-to-next-field in preferences
+- added quick 'O'KAY and 'C'ANCEL in preferences
+- fixed cut-off in view-file
+- added support for ANSI colors (strips them off)
+
+
+II@0.5.0@0:	[beta I]
+-----------
+- read the README carefully. I rewrote all parts so you will find valuable
+  information even if you are used to it. pftp II had changed in many ways,
+  so take a look at it.
+
+
+contact information:
+--------------------
+IRC:	pSi_ (US-EFNET)
+WWW:	http://wildsau.idv.uni-linz.ac.at/~m9555877
+FTP:	<none>
+EMAIL:	psi@backlash.de

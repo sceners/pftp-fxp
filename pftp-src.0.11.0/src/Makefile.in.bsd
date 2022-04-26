@@ -1,0 +1,25 @@
+CPP= g++
+
+.cc.o	:	
+	        $(CPP) -c $(CPPFLAGS) $<
+
+all	:	main.o switchserver.o tcp.o displayupdate.o server.o bookmark.o opensitedialog.o displayhandler.o keyhandler.o $(OBJS)
+		$(CPP) -pthread -o pftp main.o switchserver.o tcp.o displayupdate.o server.o bookmark.o opensitedialog.o displayhandler.o keyhandler.o $(OBJS) $(LINKFLAGS)
+		$(DO)
+		cp -f pftp ..
+
+dynamic	:	main.o switchserver.o tcp.o displayupdate.o server.o bookmark.o opensitedialog.o displayhandler.o keyhandler.o $(OBJS)
+		$(CPP) -pthread -o pftp main.o switchserver.o tcp.o displayupdate.o server.o bookmark.o opensitedialog.o displayhandler.o keyhandler.o $(OBJS) $(LINKFLAGS)
+		$(DO)
+		cp -f pftp ..
+
+static	:	main.o switchserver.o tcp.o displayupdate.o server.o bookmark.o opensitedialog.o displayhandler.o keyhandler.o $(OBJS)
+		$(CPP) -pthread -o pftp main.o switchserver.o tcp.o displayupdate.o server.o bookmark.o opensitedialog.o displayhandler.o keyhandler.o $(OBJS) $(LINKFLAGS) -static
+		$(DO)
+		cp -f pftp ..
+
+clean	:	
+		rm -f *.o; rm -f ../pftp;rm -f pftp
+
+
+

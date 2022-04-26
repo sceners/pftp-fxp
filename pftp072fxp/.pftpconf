@@ -1,0 +1,60 @@
+#- the whole file isn't very userfriendly, so please JUST use the form as
+#  described. Otherwise unpredictable things may happen!
+#- comments start with a "#" as the FIRST character, the whole line will be
+#  ignored
+#- don't make empty lines, I'm not microshit where eveyone can fuck up config-
+#  files without worrying
+#- items have the form "ITEMNAME=VALUE". no spaces between, nothing.
+#
+#- rite now you can specify the following items:
+#        LINUX only:
+#        - DEVICE        if you are using a dialup or a machine with multiple
+#                        network-devices, you have to use this item or you can't
+#                        get linfxp to work. You can determine what devices you
+#                        have by issuing "ifcfg".
+#                        ex.: "DEVICE=ppp0" "DEVICE=eth0"
+#
+#        SUN-OS only:
+#        - LOCALIP       some SunOS-machines seems to have problems detecting
+#                        their own IP. You need to specify this item in case
+#                        you have such a host (you can determine that if you
+#                        get the error "PORT command not understood").
+#                        It's not wrong to specify that even if your machine
+#                        could work without it. You can JUST use a numerical
+#                        IP here.
+#                        ex.: "LOCALIP=123.456.234.345"
+#
+#	all ports:
+#	- OKAYDIR	a (writable) dir where the .okay and .error files for
+#			transferred files are stored. Those are temporary
+#			files needed for internal synchronization, and nothing
+#			else. Dont worry about it, just wipe its contents every
+#			now and then. Never choose a dir where
+#			other users could put their stuff in too, like /tmp/ !
+#			NEVER use a relative dir, ALWAYS absolute!
+#			And put a '/' on the end !
+#			ex.: "OKAYDIR=/home/me/pftp/okays/"
+#
+#	- RNDREFR	randomizes refresh rate up to +/- half of the interval
+#			of each site (possible values: 0 and 1)
+#
+#	- STEALTH	stealth couriering. Uses a different method to obtain
+#			a filelist.
+#			WARNING: it was a nice idea, but nowadays script
+#			hunters will locate pftp MORE EASYLY with this option
+#			turned on! (so basically DONT USE IT, SET IT TO 0)
+#			(possible values: 0 and 1)
+#
+# -----------------------------------------------------------------------------
+# modify to your needs
+# -----------------------------------------------------------------------------
+#
+DEVICE=eth0
+# remember, NEVER use /tmp/ here !
+OKAYDIR=/change_this/to_a_valid/dir/
+RNDREFR=1
+STEALTH=0
+#
+# -----------------------------------------------------------------------------
+# dont touch these last lines!
+# -----------------------------------------------------------------------------
